@@ -1,0 +1,242 @@
+/* Top Bar */
+.top-bar {
+  background-color: var(--primary-dark);
+  color: #94a3b8;
+  font-size: 0.85rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.top-bar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-info {
+  display: flex;
+  gap: 2rem;
+}
+
+.contact-info a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-info a:hover {
+  color: var(--accent-gold);
+}
+
+.contact-info i {
+  color: var(--accent-gold);
+}
+
+.social-links {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.social-links a:hover {
+  color: var(--accent-gold);
+  transform: translateY(-1px);
+}
+
+/* Main Header */
+.main-header {
+  height: var(--header-height);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--neutral-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-bold {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: var(--primary-dark);
+  letter-spacing: -0.5px;
+}
+
+.logo-light {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: 1.6rem;
+  color: var(--accent-gold);
+  letter-spacing: -0.5px;
+}
+
+.logo-sub {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  color: var(--neutral-body);
+  margin-top: 2px;
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.desktop-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.desktop-nav a:not(.header-cta) {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--primary-dark);
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.desktop-nav a:not(.header-cta)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-gold);
+  transition: var(--transition-smooth);
+}
+
+.desktop-nav a:not(.header-cta):hover::after,
+.desktop-nav a.active::after {
+  width: 100%;
+}
+
+.desktop-nav a.active {
+  color: var(--accent-gold);
+}
+
+.header-cta {
+  padding: 0.6rem 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* Mobile Toggle Hamburger Button */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  z-index: 110;
+}
+
+.mobile-toggle .bar {
+  width: 25px;
+  height: 2px;
+  background-color: var(--primary-dark);
+  transition: var(--transition-smooth);
+  transform-origin: center;
+}
+
+.mobile-toggle .bar.open:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-toggle .bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-toggle .bar.open:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Navigation Side Drawer */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.98);
+  backdrop-filter: blur(15px);
+  z-index: 105;
+  padding: 8rem 2.5rem 3rem 2.5rem;
+  transition: var(--transition-smooth);
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+}
+
+.mobile-nav.show {
+  right: 0;
+}
+
+.mobile-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobile-nav a:not(.btn) {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: #fff;
+  display: block;
+}
+
+.mobile-nav a.active:not(.btn) {
+  color: var(--accent-gold);
+}
+
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 102;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.mobile-nav-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 992px) {
+  .top-bar {
+    display: none;
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-toggle {
+    display: flex;
+  }
+}

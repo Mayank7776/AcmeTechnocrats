@@ -1,0 +1,75 @@
+<!-- Inner Banner Header -->
+<div class="inner-banner">
+  <div class="container animate-fade-in">
+    <h1>Project Gallery</h1>
+    <p>Home &nbsp;/&nbsp; Gallery</p>
+  </div>
+</div>
+
+<!-- Gallery Grid Section -->
+<section class="gallery-section section-padding">
+  <div class="container">
+    
+    <!-- Filter Pills -->
+    <div class="filter-wrapper animate-fade-in">
+      <button 
+        (click)="filterCategory('All')" 
+        [class.active]="selectedCategory() === 'All'" 
+        class="filter-pill">
+        All Media
+      </button>
+      <button 
+        (click)="filterCategory('Architecture')" 
+        [class.active]="selectedCategory() === 'Architecture'" 
+        class="filter-pill">
+        Architecture
+      </button>
+      <button 
+        (click)="filterCategory('Engineering')" 
+        [class.active]="selectedCategory() === 'Engineering'" 
+        class="filter-pill">
+        Engineering
+      </button>
+      <button 
+        (click)="filterCategory('Site Work')" 
+        [class.active]="selectedCategory() === 'Site Work'" 
+        class="filter-pill">
+        Site Work
+      </button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid">
+      @for (item of filteredItems(); track item.title) {
+        <div class="card gallery-card animate-slide-up" (click)="openLightbox(item)">
+          <div class="gallery-img-wrapper">
+            <img [src]="item.image" [alt]="item.title" class="gallery-img">
+            <div class="gallery-overlay">
+              <i class="fa-solid fa-magnifying-glass-plus zoom-icon"></i>
+              <span class="gallery-cat">{{item.category}}</span>
+              <h3 class="gallery-title">{{item.title}}</h3>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>
+
+<!-- Lightbox Modal -->
+@if (activeLightboxItem(); as item) {
+  <div class="lightbox-overlay" (click)="closeLightbox()">
+    <button class="lightbox-close" (click)="closeLightbox()" aria-label="Close Lightbox">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    
+    <div class="lightbox-content glass-card" (click)="$event.stopPropagation()">
+      <img [src]="item.image" [alt]="item.title" class="lightbox-img">
+      <div class="lightbox-caption">
+        <span class="lightbox-cat">{{item.category}}</span>
+        <h3>{{item.title}}</h3>
+      </div>
+    </div>
+  </div>
+}

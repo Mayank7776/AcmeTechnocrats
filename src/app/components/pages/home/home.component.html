@@ -1,0 +1,177 @@
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content animate-slide-up">
+    <span class="hero-tagline">BUILDING WITH WORTH & INTEGRITY</span>
+    <h1 class="hero-title">Crafting Iconic Spaces, Engineering Robust Solutions</h1>
+    <p class="hero-desc">
+      A professional construction consultancy specializing in Architectural Planning, Structural Design, MEP, Valuations, and Project Management.
+    </p>
+    <div class="hero-actions">
+      <a routerLink="/services" class="btn btn-primary">Our Services</a>
+      <a routerLink="/about" class="btn btn-secondary" style="border-color: #fff; color: #fff;">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- Welcome Section -->
+<section class="welcome-section section-padding">
+  <div class="container welcome-grid">
+    <div class="welcome-text">
+      <span class="section-tag">WHO WE ARE</span>
+      <h2 class="welcome-title">Engineering the Future, Preserving the Value</h2>
+      <p class="lead">
+        Buildsworth Solutions is a registered professional firm dedicated to structural engineering excellence and project execution consultancy.
+      </p>
+      <p>
+        From complex industrial and infrastructure structures to modern commercial and residential complexes, we ensure every detail is evaluated, checked, and managed to standard. We guide developers, architects, and owners through the complete lifecycle of a build.
+      </p>
+      <div class="welcome-features">
+        <div class="feature-item">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div>
+            <h3>Rigorous Structural Safety</h3>
+            <p>Our calculations adhere strictly to global safety norms and local directives.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-lightbulb"></i>
+          <div>
+            <h3>Innovative Planning</h3>
+            <p>We combine spatial creativity with structural viability for stunning projects.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="welcome-image">
+      <img src="/architecture.png" alt="Architecture Model on Desk" class="card">
+    </div>
+  </div>
+</section>
+
+<!-- Stats Banner -->
+<section class="stats-section">
+  <div class="container stats-grid">
+    @for (stat of stats; track stat.label) {
+      <div class="stat-card glass-card">
+        <i [class]="stat.icon"></i>
+        <span class="stat-val">{{stat.value}}</span>
+        <span class="stat-label">{{stat.label}}</span>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- Featured Services -->
+<section class="services-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">WHAT WE DO</span>
+      <h2 class="section-title">Our Expert Services</h2>
+      <p class="section-desc">Providing structured construction consultancy and end-to-end management services.</p>
+    </div>
+
+    <div class="services-grid">
+      @for (service of services; track service.title) {
+        <div class="card service-card">
+          <div class="service-img-wrapper">
+            <img [src]="service.image" [alt]="service.title" class="service-img">
+          </div>
+          <div class="service-info">
+            <h3>{{service.title}}</h3>
+            <p>{{service.desc}}</p>
+            <a [routerLink]="service.link" class="service-more-link">
+              Read More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">TESTIMONIALS</span>
+      <h2 class="section-title">What Our Clients Say</h2>
+      <p class="section-desc">We measure our success by the satisfaction and trust of our clients.</p>
+    </div>
+
+    <div class="testimonial-container glass-card">
+      <i class="fa-solid fa-quote-left quote-icon"></i>
+      <p class="testimonial-quote">
+        "{{testimonials[activeTestimonial()].quote}}"
+      </p>
+      <div class="testimonial-meta">
+        <h4 class="testimonial-author">{{testimonials[activeTestimonial()].author}}</h4>
+        <span class="testimonial-role">{{testimonials[activeTestimonial()].role}}</span>
+      </div>
+
+      <div class="testimonial-dots">
+        @for (item of testimonials; track $index) {
+          <button 
+            (click)="setTestimonial($index)" 
+            [class.active]="activeTestimonial() === $index"
+            aria-label="View Testimonial"
+            class="dot-btn">
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form / Callback Section -->
+<section class="contact-section section-padding">
+  <div class="container contact-grid">
+    <div class="contact-text">
+      <span class="section-tag">INQUIRY FORM</span>
+      <h2 class="contact-title">Let's Discuss Your Project</h2>
+      <p>
+        Have a project idea, valuation requirement, or need structural inspection consultancy? Submit the form and our technical experts will reach out within 24 hours.
+      </p>
+      <ul class="contact-bullet-list">
+        <li><i class="fa-solid fa-check"></i> Free initial design discussion</li>
+        <li><i class="fa-solid fa-check"></i> Accurate estimates and schedule drafting</li>
+        <li><i class="fa-solid fa-check"></i> Complete engineering overview report</li>
+      </ul>
+    </div>
+    
+    <div class="card contact-form-card">
+      @if (contactFormSubmitted()) {
+        <div class="success-message">
+          <i class="fa-solid fa-circle-check"></i>
+          <h3>Submission Successful!</h3>
+          <p>Thank you. Our consulting engineer will call you shortly.</p>
+        </div>
+      } @else {
+        <form (submit)="submitContactForm()">
+          <div class="form-group">
+            <label class="form-label" for="clientName">Full Name</label>
+            <input type="text" id="clientName" class="form-control" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="clientEmail">Email Address</label>
+            <input type="email" id="clientEmail" class="form-control" placeholder="john@example.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="projectType">Project Type</label>
+            <select id="projectType" class="form-control">
+              <option value="architecture">Architectural Planning</option>
+              <option value="engineering">Building Engineering</option>
+              <option value="pmc">Project Management (PMC)</option>
+              <option value="valuation">Valuations & Auditing</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="clientMsg">Message Details</label>
+            <textarea id="clientMsg" class="form-control" rows="4" placeholder="Briefly describe your requirements..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Consultation Request</button>
+        </form>
+      }
+    </div>
+  </div>
+</section>

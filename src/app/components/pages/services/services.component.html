@@ -1,0 +1,96 @@
+<!-- Inner Banner Header -->
+<div class="inner-banner">
+  <div class="container animate-fade-in">
+    <h1>Our Professional Services</h1>
+    <p>Home &nbsp;/&nbsp; Services</p>
+  </div>
+</div>
+
+<!-- Detailed Services Section -->
+<section class="services-tab-section section-padding">
+  <div class="container tab-grid">
+    
+    <!-- Tab Controls Sidebar -->
+    <div class="tab-sidebar">
+      <span class="section-tag">CAPABILITIES</span>
+      <h2 class="sidebar-title">What We Offer</h2>
+      <p class="sidebar-desc">Select a category below to explore specific details, deliverables, and engineering methodologies.</p>
+      
+      <div class="tab-menu">
+        @for (service of services; track service.id) {
+          <button 
+            (click)="selectService(service.id)" 
+            [class.active]="selectedServiceId() === service.id"
+            class="tab-btn">
+            <i [class]="service.icon"></i>
+            <span>{{service.title}}</span>
+            <i class="fa-solid fa-angle-right arrow-indicator"></i>
+          </button>
+        }
+      </div>
+    </div>
+
+    <!-- Tab Content Area -->
+    <div class="tab-content card">
+      @let current = getSelectedService();
+      <div class="content-img-wrapper animate-fade-in">
+        <img [src]="current.image" [alt]="current.title" class="content-img">
+        <div class="content-img-overlay">
+          <i [class]="current.icon + ' content-overlay-icon'"></i>
+        </div>
+      </div>
+      
+      <div class="content-info-panel animate-slide-up">
+        <h2>{{current.title}}</h2>
+        <p class="lead-text">{{current.lead}}</p>
+        
+        <div class="sub-services-header">
+          <h3>Core Deliverables & Scope</h3>
+          <div class="divider"></div>
+        </div>
+
+        <ul class="sub-services-list">
+          @for (sub of current.subServices; track sub) {
+            <li>
+              <i class="fa-solid fa-circle-check check-icon"></i>
+              <span>{{sub}}</span>
+            </li>
+          }
+        </ul>
+        
+        <div class="service-action">
+          <a routerLink="/about" class="btn btn-primary">Request Call with Principal Consultant</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Why Us Banner -->
+<section class="why-us-section section-padding">
+  <div class="container why-us-grid">
+    <div class="why-us-content">
+      <span class="section-tag">OUR GUARANTEE</span>
+      <h2>State of the Art Construction Valuations & Quality Audits</h2>
+      <p>
+        Every structural audit, safety certificate, and project valuation report is compiled by registered Government Approved Valuers and chartered engineers. We ensure full compliance with the state regulations, court proceedings, and banking formats.
+      </p>
+      <div class="guarantees-grid">
+        <div class="guarantee-card glass-card">
+          <i class="fa-solid fa-stamp"></i>
+          <h4>Approved Formats</h4>
+          <p>Reports formatted according to institutional standard rules.</p>
+        </div>
+        <div class="guarantee-card glass-card">
+          <i class="fa-solid fa-bolt"></i>
+          <h4>Fast Turnaround</h4>
+          <p>Field inspections and assessments done within 48-72 hours.</p>
+        </div>
+      </div>
+    </div>
+    <div class="why-us-image-wrapper">
+      <img src="/engineering.png" alt="Engineering plans" class="card">
+    </div>
+  </div>
+</section>

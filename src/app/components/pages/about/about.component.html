@@ -1,0 +1,83 @@
+<!-- Inner Banner Header -->
+<div class="inner-banner">
+  <div class="container animate-fade-in">
+    <h1>About Our Company</h1>
+    <p>Home &nbsp;/&nbsp; About Us</p>
+  </div>
+</div>
+
+<!-- Intro Narrative Section -->
+<section class="about-intro section-padding">
+  <div class="container intro-grid">
+    <div class="intro-image-wrapper">
+      <img src="/engineering.png" alt="Structural Reinforcements" class="card intro-img">
+    </div>
+    
+    <div class="intro-content">
+      <span class="section-tag">OUR JOURNEY</span>
+      <h2 class="intro-title">Buildsworth Solutions Private Limited</h2>
+      <p class="lead">
+        Established in June 2017, Buildsworth Solutions is an engineering consultancy firm dedicated to transforming ideas into robust and iconic physical assets.
+      </p>
+      <p>
+        From our early days in Noida and Ghaziabad, we have focused on providing developers, builders, and corporate houses with high-end, rigorous civil engineering support. We provide architectural blueprints, structural design reviews, MEP layouts, Project Management Consultancy (PMC), and objective property valuations.
+      </p>
+      <p>
+        Our leadership team brings together decades of site experience and technical acumen, helping client projects meet safety standards, structural durability, and economic budgets.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Values Section -->
+<section class="values-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">OUR VALUES</span>
+      <h2 class="section-title">The Pillars of Our Operations</h2>
+      <p class="section-desc">We operate on strong engineering principles, ensuring transparency and reliability at every phase.</p>
+    </div>
+
+    <div class="values-grid">
+      @for (val of values; track val.title) {
+        <div class="card value-card">
+          <div class="value-icon-wrapper">
+            <i [class]="val.icon"></i>
+          </div>
+          <h3>{{val.title}}</h3>
+          <p>{{val.desc}}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="team-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">LEADERSHIP TEAM</span>
+      <h2 class="section-title">Meet Our Experts</h2>
+      <p class="section-desc">Our qualified project managers, design draftsmen, and estimators carry your project to success.</p>
+    </div>
+
+    <div class="team-grid">
+      @for (member of team; track member.name) {
+        <div class="card team-card">
+          <div class="team-img-wrapper">
+            <img [src]="member.image" [alt]="member.name" class="team-img">
+          </div>
+          <div class="team-info">
+            <h3 class="team-name">{{member.name}}</h3>
+            <span class="team-role">{{member.role}}</span>
+            <p class="team-bio">{{member.bio}}</p>
+            <div class="team-socials">
+              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

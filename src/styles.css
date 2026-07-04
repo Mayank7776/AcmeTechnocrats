@@ -1,1 +1,291 @@
-/* You can add global styles to this file, and also import other style files */
+/* Reset & Base Setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Color Palette */
+  --primary-dark: #0f172a;      /* Deep Slate Charcoal */
+  --primary-navy: #1e293b;      /* Slate Gray/Blue */
+  --accent-gold: #d97706;       /* Radiant Warm Amber/Gold */
+  --accent-gold-hover: #b45309; /* Dark Amber/Gold */
+  --accent-gold-light: #fef3c7; /* Light Amber tint */
+  --neutral-dark: #1e293b;
+  --neutral-body: #475569;
+  --neutral-light: #f8fafc;     /* Ice/Silver White */
+  --neutral-border: #e2e8f0;
+  --card-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+  --hover-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.15);
+  
+  /* Fonts */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Layout */
+  --header-height: 80px;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 24px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--neutral-body);
+  background-color: var(--neutral-light);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--primary-dark);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--neutral-light);
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Utility Layout Classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-padding {
+  padding: 6rem 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Common Section Header */
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+}
+
+.section-tag {
+  color: var(--accent-gold);
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.section-desc {
+  color: var(--neutral-body);
+  font-size: 1.1rem;
+}
+
+/* Global Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  padding: 0.85rem 2rem;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  font-size: 1rem;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--accent-gold);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(217, 119, 6, 0.4);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border-color: var(--primary-dark);
+  color: var(--primary-dark);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-dark);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.btn-outline-gold {
+  background-color: transparent;
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+.btn-outline-gold:hover {
+  background-color: var(--accent-gold);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Cards & Glassmorphism */
+.card {
+  background: #fff;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--neutral-border);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-smooth);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-smooth);
+}
+
+/* Banner Headers for Inner Pages */
+.inner-banner {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.85)), url('/banner.png') no-repeat center/cover;
+  padding: 8rem 0 5rem 0;
+  color: #fff;
+  text-align: center;
+}
+
+.inner-banner h1 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.inner-banner p {
+  color: var(--accent-gold-light);
+  font-size: 1.1rem;
+  font-family: var(--font-heading);
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--primary-dark);
+  font-size: 0.95rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.85rem 1.2rem;
+  border-radius: var(--border-radius-sm);
+  border: 1px solid var(--neutral-border);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: var(--transition-smooth);
+  background-color: var(--neutral-light);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease forwards;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 4rem 0;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .inner-banner {
+    padding: 6rem 0 4rem 0;
+  }
+  .inner-banner h1 {
+    font-size: 2.2rem;
+  }
+}

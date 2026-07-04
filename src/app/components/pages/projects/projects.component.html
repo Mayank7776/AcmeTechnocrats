@@ -1,0 +1,83 @@
+<!-- Inner Banner Header -->
+<div class="inner-banner">
+  <div class="container animate-fade-in">
+    <h1>Our Projects Portfolio</h1>
+    <p>Home &nbsp;/&nbsp; Projects</p>
+  </div>
+</div>
+
+<!-- Portfolio Grid Section -->
+<section class="portfolio-section section-padding">
+  <div class="container">
+    
+    <!-- Filter Pills -->
+    <div class="filter-wrapper animate-fade-in">
+      <button 
+        (click)="filterProjects('All')" 
+        [class.active]="selectedFilter() === 'All'" 
+        class="filter-pill">
+        All Projects
+      </button>
+      <button 
+        (click)="filterProjects('Residential')" 
+        [class.active]="selectedFilter() === 'Residential'" 
+        class="filter-pill">
+        Residential
+      </button>
+      <button 
+        (click)="filterProjects('Commercial')" 
+        [class.active]="selectedFilter() === 'Commercial'" 
+        class="filter-pill">
+        Commercial
+      </button>
+      <button 
+        (click)="filterProjects('Industrial')" 
+        [class.active]="selectedFilter() === 'Industrial'" 
+        class="filter-pill">
+        Industrial
+      </button>
+    </div>
+
+    <!-- Dynamic Projects Grid -->
+    <div class="portfolio-grid">
+      @for (project of filteredProjects(); track project.title) {
+        <div class="card project-card animate-slide-up">
+          <div class="project-img-wrapper">
+            <img [src]="project.image" [alt]="project.title" class="project-img">
+            <span class="status-tag" [class]="project.status.toLowerCase()">{{project.status}}</span>
+          </div>
+          
+          <div class="project-info">
+            <span class="project-cat">{{project.category}}</span>
+            <h3 class="project-title">{{project.title}}</h3>
+            
+            <div class="project-details">
+              <div class="detail-item">
+                <i class="fa-solid fa-compass-drafting"></i>
+                <div>
+                  <strong>Scope:</strong>
+                  <span>{{project.scope}}</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                  <strong>Location:</strong>
+                  <span>{{project.location}}</span>
+                </div>
+              </div>
+              <div class="detail-item">
+                <i class="fa-solid fa-maximize"></i>
+                <div>
+                  <strong>Scale Size:</strong>
+                  <span>{{project.size}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>
