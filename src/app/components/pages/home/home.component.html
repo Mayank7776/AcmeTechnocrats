@@ -123,55 +123,17 @@
   </div>
 </section>
 
-<!-- Contact Form / Callback Section -->
+<!-- Contact / Call to Action Section -->
 <section class="contact-section section-padding">
-  <div class="container contact-grid">
-    <div class="contact-text">
-      <span class="section-tag">INQUIRY FORM</span>
-      <h2 class="contact-title">Let's Discuss Your Project</h2>
-      <p>
-        Have a project idea, valuation requirement, or need structural inspection consultancy? Submit the form and our technical experts will reach out within 24 hours.
-      </p>
-      <ul class="contact-bullet-list">
-        <li><i class="fa-solid fa-check"></i> Free initial design discussion</li>
-        <li><i class="fa-solid fa-check"></i> Accurate estimates and schedule drafting</li>
-        <li><i class="fa-solid fa-check"></i> Complete engineering overview report</li>
-      </ul>
-    </div>
-    
-    <div class="card contact-form-card">
-      @if (contactFormSubmitted()) {
-        <div class="success-message">
-          <i class="fa-solid fa-circle-check"></i>
-          <h3>Submission Successful!</h3>
-          <p>Thank you. Our consulting engineer will call you shortly.</p>
-        </div>
-      } @else {
-        <form (submit)="submitContactForm()">
-          <div class="form-group">
-            <label class="form-label" for="clientName">Full Name</label>
-            <input type="text" id="clientName" class="form-control" placeholder="John Doe" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="clientEmail">Email Address</label>
-            <input type="email" id="clientEmail" class="form-control" placeholder="john@example.com" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="projectType">Project Type</label>
-            <select id="projectType" class="form-control">
-              <option value="architecture">Architectural Planning</option>
-              <option value="engineering">Building Engineering</option>
-              <option value="pmc">Project Management (PMC)</option>
-              <option value="valuation">Valuations & Auditing</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="clientMsg">Message Details</label>
-            <textarea id="clientMsg" class="form-control" rows="4" placeholder="Briefly describe your requirements..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Consultation Request</button>
-        </form>
-      }
-    </div>
+  <div class="container contact-centered">
+    <h2 class="contact-title text-center">Let's Discuss Your Project</h2>
+    <p class="contact-desc text-center">
+      Have a project idea, valuation requirement, or need structural inspection consultancy? We are here to help. Reach out to our technical experts today and let's build something exceptional together.
+    </p>
+    <ul class="contact-bullet-list centered-list">
+      <li><i class="fa-solid fa-check"></i> Free initial design discussion</li>
+      <li><i class="fa-solid fa-check"></i> Accurate estimates and schedule drafting</li>
+      <li><i class="fa-solid fa-check"></i> Complete engineering overview report</li>
+    </ul>
   </div>
 </section>

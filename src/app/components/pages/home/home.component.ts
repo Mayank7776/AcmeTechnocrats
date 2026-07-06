@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -52,16 +53,8 @@ export class HomeComponent {
   ];
 
   activeTestimonial = signal(0);
-  contactFormSubmitted = signal(false);
 
   setTestimonial(index: number) {
     this.activeTestimonial.set(index);
-  }
-
-  submitContactForm() {
-    this.contactFormSubmitted.set(true);
-    setTimeout(() => {
-      this.contactFormSubmitted.set(false);
-    }, 5000);
   }
 }
