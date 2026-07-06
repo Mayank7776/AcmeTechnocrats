@@ -2,6 +2,8 @@ import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
+import { environment } from '../../../../environments/environment';
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -11,6 +13,11 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class HeaderComponent {
   isMobileMenuOpen = signal(false);
+  
+  facebookUrl = environment.facebookUrl;
+  twitterUrl = environment.twitterUrl;
+  instagramUrl = environment.instagramUrl;
+  linkedinUrl = environment.linkedinUrl;
 
   toggleMobileMenu() {
     this.isMobileMenuOpen.update(prev => !prev);

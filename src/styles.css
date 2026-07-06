@@ -289,3 +289,79 @@ img {
     font-size: 2.2rem;
   }
 }
+
+/* Acme Technocrats Logo Styling */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+}
+
+.logo-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  object-position: left;
+  border-radius: 50%;
+  display: block;
+  transition: var(--transition-smooth);
+  
+  /* Prevent blurriness during and after transition/hover */
+  transform: translateZ(0);
+  will-change: transform;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+.logo-container:hover .logo-img {
+  transform: scale(1.05) translateZ(0);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+
+.logo-main {
+  font-family: var(--font-heading);
+  font-size: 1.55rem;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: baseline;
+  line-height: 1.1;
+}
+
+.logo-small {
+  text-transform: lowercase;
+  font-weight: 500;
+  color: #eab308; /* Premium warm golden-yellow */
+}
+
+.logo-bold {
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #facc15; /* Bright yellow for bold name */
+  margin-left: 1px;
+}
+
+.logo-slogan {
+  font-family: var(--font-body);
+  font-size: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 3px;
+  line-height: 1;
+}
+
+/* Color variations for header and footer context */
+.header-logo .logo-slogan {
+  color: var(--neutral-body);
+}
+
+.footer-logo .logo-slogan {
+  color: #94a3b8;
+}

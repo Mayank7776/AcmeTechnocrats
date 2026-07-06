@@ -6,10 +6,10 @@ import { ProjectsComponent } from './components/pages/projects/projects.componen
 import { GalleryComponent } from './components/pages/gallery/gallery.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent, title: 'Buildsworth Solutions | Home' },
-  { path: 'about', component: AboutComponent, title: 'Buildsworth Solutions | About Us' },
-  { path: 'services', component: ServicesComponent, title: 'Buildsworth Solutions | Services' },
-  { path: 'projects', component: ProjectsComponent, title: 'Buildsworth Solutions | Projects' },
-  { path: 'gallery', component: GalleryComponent, title: 'Buildsworth Solutions | Gallery' },
+  { path: '', component: HomeComponent, title: 'Acme Technocrats | Home' },
+  { path: 'about', component: AboutComponent, title: 'Acme Technocrats | About Us' },
+  { path: 'services', component: ServicesComponent, title: 'Acme Technocrats | Services' },
+  { path: 'projects', component: ProjectsComponent, title: 'Acme Technocrats | Projects' },
+  { path: 'gallery', component: GalleryComponent, title: 'Acme Technocrats | Gallery' },
   { path: '**', redirectTo: '' }
 ];

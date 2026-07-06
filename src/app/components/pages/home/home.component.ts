@@ -13,7 +13,7 @@ export class HomeComponent {
   stats = [
     { value: '250+', label: 'Projects Completed', icon: 'fa-solid fa-circle-check' },
     { value: '15+', label: 'Years Experience', icon: 'fa-solid fa-award' },
-    { value: '50+', label: 'Expert Engineers', icon: 'fa-solid fa-users-gears' },
+    { value: '50+', label: 'Expert Engineers', icon: 'fa-solid fa-users-gear' },
     { value: '99%', label: 'Satisfied Clients', icon: 'fa-solid fa-face-smile' }
   ];
 
@@ -40,7 +40,7 @@ export class HomeComponent {
 
   testimonials = [
     {
-      quote: "Buildsworth Solutions transformed our design vision into reality. Their engineering analysis was extremely rigorous, and their PMC team completed the project weeks ahead of schedule.",
+      quote: "Acme Technocrats transformed our design vision into reality. Their engineering analysis was extremely rigorous, and their PMC team completed the project weeks ahead of schedule.",
       author: "Robert Chen",
       role: "Operations Director, Vertex Developments"
     },
