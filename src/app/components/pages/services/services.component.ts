@@ -61,20 +61,20 @@ export class ServicesComponent {
         'Contractor Billing & Progress Validation',
         'On-site Quality Control Inspections'
       ]
-    },
-    {
-      id: 'valuation',
-      title: 'Valuations & Appraisals',
-      icon: 'fa-solid fa-file-invoice-dollar',
-      image: '/architecture.png',
-      lead: 'Providing licensed properties, land, and asset valuations for financial institutions, court records, and taxation.',
-      subServices: [
-        'Income Tax & Capital Gains Valuation',
-        'Visa Asset Appraisals',
-        'Bank Credit Valuation Reports',
-        'RERA Compliance Consulting'
-      ]
     }
+    // {
+    //   id: 'valuation',
+    //   title: 'Valuations & Appraisals',
+    //   icon: 'fa-solid fa-file-invoice-dollar',
+    //   image: '/architecture.png',
+    //   lead: 'Providing licensed properties, land, and asset valuations for financial institutions, court records, and taxation.',
+    //   subServices: [
+    //     'Income Tax & Capital Gains Valuation',
+    //     'Visa Asset Appraisals',
+    //     'Bank Credit Valuation Reports',
+    //     'RERA Compliance Consulting'
+    //   ]
+    // }
   ];
 
   selectedServiceId = signal('architecture');

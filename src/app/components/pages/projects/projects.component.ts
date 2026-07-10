@@ -22,7 +22,7 @@ export class ProjectsComponent {
     {
       title: 'Horizon Corporate Tower',
       category: 'Commercial',
-      status: 'Ongoing',
+      status: 'Completed',
       location: 'Sector 62, Noida',
       image: '/banner.png',
       scope: 'Project Management Consultancy (PMC)',
@@ -40,7 +40,7 @@ export class ProjectsComponent {
     {
       title: 'Royal Palms Heights',
       category: 'Residential',
-      status: 'Ongoing',
+      status: 'Completed',
       location: 'Vasundhara, Ghaziabad',
       image: '/architecture.png',
       scope: 'Architectural Plan & Foundation Check',
@@ -49,7 +49,7 @@ export class ProjectsComponent {
     {
       title: 'TechnoPark IT Hub',
       category: 'Commercial',
-      status: 'Upcoming',
+      status: 'Completed',
       location: 'Greater Noida Link Road',
       image: '/hero.png',
       scope: 'Full Structural & MEP Audit',
